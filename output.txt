@@ -1,0 +1,92 @@
+PS D:\NotesKillProject> git init
+Initialized empty Git repository in D:/NotesKillProject/.git/
+PS D:\NotesKillProject> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PS D:\NotesKillProject> git add -A   
+PS D:\NotesKillProject> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+PS D:\NotesKillProject> git commit -m "first version of my application" 
+[master (root-commit) e4684dc] first version of my application
+ 1 file changed, 12 insertions(+)
+ create mode 100644 index.html
+PS D:\NotesKillProject> git branch        
+* master
+PS D:\NotesKillProject> git branch -M main
+PS D:\NotesKillProject> git branch
+* main
+PS D:\NotesKillProject> git remote add origin https://github.com/ajayverma2611/html.git
+PS D:\NotesKillProject> git push -u origin 
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS D:\NotesKillProject> git push -u origin main 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 397 bytes | 132.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ajayverma2611/html.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS D:\NotesKillProject> git add -A
+PS D:\NotesKillProject> git status -s 
+MM index.html
+PS D:\NotesKillProject> git commit -a -m "New line added in index.html"
+[main 797b131] New line added in index.html
+ 1 file changed, 4 insertions(+)
+PS D:\NotesKillProject> git push -u origin main 
+To https://github.com/ajayverma2611/html.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/ajayverma2611/html.git'   
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing     
+hint: to the same ref. You may want to first integrate the remote changes        
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.       
+PS D:\NotesKillProject> git fetch
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 935 bytes | 44.00 KiB/s, done.
+From https://github.com/ajayverma2611/html
+   e4684dc..4d98aa8  main       -> origin/main
+PS D:\NotesKillProject> git merge
+Merge made by the 'ort' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+PS D:\NotesKillProject> git push -u origin 
+Enumerating objects: 9, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 631 bytes | 157.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ajayverma2611/html.git
+   4d98aa8..749eb6d  main -> main
+branch 'main' set up to track 'origin/main'.
+PS D:\NotesKillProject>
